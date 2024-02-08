@@ -8,6 +8,7 @@ using UnityEngine.Rendering.Universal;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] NavMeshAgent agent;
+    [SerializeField] GameObject playerMesh;
     [SerializeField] float Speed=10;
     [SerializeField] bool Pause=false;
     [SerializeField] Stack<Transform> petrolPoint=new Stack<Transform>();
@@ -110,6 +111,12 @@ public class PlayerController : MonoBehaviour
         myTransform.position=GameManager.instacne.lastCheckPoint.position;
         IsGameOver=false;
         animator.Play("Run");
+        playerMesh.transform.localPosition=Vector3.zero;
+
+        agent.speed=Speed;
+        speedPaticel.Stop();
+        VolumeController.instance.ToggleVigentte(false);
+
           
     }
 

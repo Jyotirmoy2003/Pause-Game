@@ -30,4 +30,13 @@ public class CameraHandeler : MonoBehaviour
                 cameraAxies.localEulerAngles=Vector3.zero;
             }
     }
+
+    public void ListenButtonWithEvent(Component sender,object data)
+    {
+        if((int)data==2 || (int)data==3) //Next Restart
+        {
+            GameWin=false;
+            cameraAxies.localEulerAngles=Vector3.zero;
+        }
+    }
 }

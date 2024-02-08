@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] Transform playerTransform;
     [SerializeField] GameEvent gameWinEvent;
     [SerializeField] Material skybixMat;
+    [SerializeField] List<ParticleSystem> particleSystems=new List<ParticleSystem>();
 
 
     void Awake()
@@ -25,7 +26,10 @@ public class GameManager : MonoBehaviour
 
     void RestartGame()
     {
-        gameWinEvent.Raise(this,false);
+        foreach (var item in particleSystems)
+        {
+                item.Pause();
+        }
     }
    
 
@@ -36,8 +40,26 @@ public class GameManager : MonoBehaviour
         {
             if((int)data==2)
             {
-                //RestartGame();
+                RestartGame();
             }
+        }
+    }
+
+    public void ListenWin(Component sender,object data)
+    {
+        if((bool)data)
+        {
+            foreach (var item in particleSystems)
+            {
+                item.Play();
+            }
+        }
+    }
+    public void ListenRestart(Component sender,object data)
+    {
+        if((bool)data)
+        {
+            RestartGame();
         }
     }
 

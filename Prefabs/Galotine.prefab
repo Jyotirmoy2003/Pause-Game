@@ -128,6 +128,7 @@ GameObject:
   - component: {fileID: 3622491128481538125}
   - component: {fileID: 3622491128481538124}
   - component: {fileID: 3622491128481538112}
+  - component: {fileID: 9223212923206772306}
   m_Layer: 3
   m_Name: Galotine
   m_TagString: Untagged
@@ -253,6 +254,19 @@ MonoBehaviour:
   targetPositon: {x: 0, y: 0, z: 0}
   line: {fileID: 3622491129494247016}
   Mode: 1
+--- !u!65 &9223212923206772306
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3622491128481538126}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.07, y: 0.0025397285, z: 0.05000001}
+  m_Center: {x: 0, y: -0.011743436, z: 0.024796547}
 --- !u!1 &3622491128910384068
 GameObject:
   m_ObjectHideFlags: 0

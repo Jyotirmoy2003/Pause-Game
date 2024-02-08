@@ -62,6 +62,7 @@ public class UIManager : MonoBehaviour
         buttonPressedEvent.Raise(this,2); //2 --> Restart
         DeactivateAll();
         progressSlider.SetActive(true);
+        AudioManager.instance.PlaySound("CLICK");
     }
 
     public void NextLevelButton()
@@ -69,6 +70,7 @@ public class UIManager : MonoBehaviour
         buttonPressedEvent.Raise(this,3); //3 --> Next Level
         DeactivateAll();
         progressSlider.SetActive(true);
+        AudioManager.instance.PlaySound("CLICK");
     }
 
     #endregion

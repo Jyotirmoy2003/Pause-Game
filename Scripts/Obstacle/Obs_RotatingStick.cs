@@ -39,4 +39,15 @@ public class Obs_RotatingStick : Obstacle
     {
         baseTransform.Rotate(0,speed,0);
     }
+
+
+    public override void PlaceObs(Vector3 pos,Transform parent)
+    {
+        Instantiate(this.gameObject,parent).transform.position=pos;
+        int val=Random.Range(0,1);
+        if(val==0) isReverseing=true;
+
+        Start();
+
+    }
 }
